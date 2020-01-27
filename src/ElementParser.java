@@ -26,12 +26,14 @@ public class ElementParser {
     public static void main(String[] args) {
         ElementParser e = new ElementParser();
         ArrayList<String> list = e.readElements();
+        ArrayList<Element> lel = new ArrayList<>();
         for(String s: list){
             String[] parts = s.split(" ");
             String name = parts[0];
             double weight = Double.parseDouble(parts[1]);
             double value = Double.parseDouble(parts[2]);
             Element ele = new Element(name, weight, value); //Make a simple Element class.
+            lel.add(ele);
         }
     }
  
