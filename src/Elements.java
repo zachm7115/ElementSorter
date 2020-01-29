@@ -24,33 +24,9 @@ public class Elements {
 //
 //
 //            Population.
-    private Element[] elements = ElementParser.getElements();
-    private ArrayList<Element> eles;
-    private int weight, Mweight;
-    public Elements(int weightt){
-        weight = 0;
-    }
-    public void checkWeight(){
-
-    }
 
 
-    private int maxWeight;
 
-    public Elements(int maxWeight){
-        this.maxWeight = maxWeight;
-    }
 
-    public Elements(Element other, int maxWeight){
-        this.maxWeight = maxWeight;
-    }
-
-    public void mutate(){
-
-    }
-
-    public void getScore(){
-
-    }
 
 }
