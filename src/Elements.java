@@ -58,6 +58,12 @@ public class Elements {
 
 
     public void mutate(){
+        int r = (int)(Math.random()*Bases.size());
+        int rr = (int)(Math.random()*eles.size());
+        Element save = eles.get(rr);
+        eles.remove(rr);
+        eles.add(Bases.get(r));
+        Bases.add(save);
 
     }
 
