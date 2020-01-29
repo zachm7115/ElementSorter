@@ -27,6 +27,22 @@ public class Elements {
 
 
 
+    private int maxWeight;
 
+    public Elements(int maxWeight){
+        this.maxWeight = maxWeight;
+    }
+
+    public Elements(Element other, int maxWeight){
+        this.maxWeight = maxWeight;
+    }
+
+    public void mutate(){
+
+    }
+
+    public void getScore(){
+
+    }
 
 }
