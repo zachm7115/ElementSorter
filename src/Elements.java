@@ -61,12 +61,13 @@ public class Elements {
 
     }
 
-    public void getScore(){
+    public int getScore(){
         score = 0;
         for (Element e: eles){
             score += e.getValue();
         }
         score *=100;
+        return (int)score;
     }
 //
 
