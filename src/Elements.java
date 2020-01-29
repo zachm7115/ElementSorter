@@ -1,7 +1,9 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Elements {
 //    TO GET THE ELEMENTS:
 //
-//    Element[] elements = ElementParser.getElements();
 //
 //    Individual.
 //    What is an "individual" in this project?  How should we save the gene?
@@ -22,6 +24,16 @@ public class Elements {
 //
 //
 //            Population.
+    private Element[] elements = ElementParser.getElements();
+    private ArrayList<Element> eles;
+    private int weight, Mweight;
+    public Elements(int weightt){
+        weight = 0;
+    }
+    public void checkWeight(){
+
+    }
+
 
 
 
