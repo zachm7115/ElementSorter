@@ -3,6 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ElementParser {
+    private int weightM;
+    private ArrayList<Element> ele;
+    public ElementParser(int weightMax){
+        weightM = weightMax;
+        ele = new ArrayList<>();
+
+    }
  
     public ArrayList<String> readElements(){
         try{
@@ -24,7 +31,7 @@ public class ElementParser {
     }
  
     public static void main(String[] args) {
-        ElementParser e = new ElementParser();
+        ElementParser e = new ElementParser(200);
         ArrayList<String> list = e.readElements();
         ArrayList<Element> lel = new ArrayList<>();
         for(String s: list){
