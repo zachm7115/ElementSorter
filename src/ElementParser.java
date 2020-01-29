@@ -40,13 +40,14 @@ public class ElementParser {
         }
     }
 
-    public static Element[] getElements() {
-        Element[] copy = new Element[elements.length];
-        int i = 0;
+    public static ArrayList<Element> getElements() {
+
+
+        ArrayList<Element> copyy = new ArrayList<>();
+
         for (Element orig : elements) {
-            copy[i] = new Element(orig);
-            i++;
+            copyy.add(new Element(orig));
         }
-        return copy;
+        return copyy;
     }
 }
