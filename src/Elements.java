@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class Elements {
 //    TO GET THE ELEMENTS:
@@ -28,18 +29,24 @@ public class Elements {
 
 
     private int maxWeight, weight;
-    private ArrayList<Element> Bases = ElementParser.getElements();
+    private ArrayList<Element> Bases;
     private ArrayList<Element> eles;
     private double score;
     public Elements(int maxWeight){
+        Bases = new ArrayList<>();
+        for (Element s: ElementParser.getElements()){
+            Bases.add(s);
+        }
         this.maxWeight = maxWeight;
         weight = 0;
         eles = new ArrayList<>();
+        Generate();
     }
     public void Generate(){
         while (weight < maxWeight){
             int r = (int)(Math.random()*Bases.size());
             eles.add(Bases.get(r));
+            weight += Bases.get(r).getWeight();
             Bases.remove(r);
         }
         eles.remove(eles.size()-1);
@@ -48,14 +55,22 @@ public class Elements {
     }
 
     public Elements(Elements other, int maxWeight){
+        Bases = new ArrayList<>();
+        for (Element s: ElementParser.getElements()){
+            Bases.add(s);
+        }
         eles = new ArrayList<>();
         this.maxWeight = maxWeight;
         for (Element e: other.eles){
             eles.add(e);
         }
+        checkWeight();
         getScore();
     }
 
+    public int getWeight() {
+        return weight;
+    }
 
     public void mutate(){
         int r = (int)(Math.random()*Bases.size());
@@ -64,6 +79,7 @@ public class Elements {
         eles.remove(rr);
         eles.add(Bases.get(r));
         Bases.add(save);
+        checkWeight();
 
     }
 
@@ -73,6 +89,9 @@ public class Elements {
             score += e.getValue();
         }
         score *=100;
+        if (weight > 200){
+            score-=10000;
+        }
         return (int)score;
     }
 //

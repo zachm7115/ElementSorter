@@ -20,7 +20,13 @@ public class Population {
     }
 
     public void sort(){
-        Collections.sort(elements, (o1, o2) -> o1.getScore() - o2.getScore());
+        Collections.sort(elements, (o1, o2) ->  o2.getScore() - o1.getScore());
+    }
+    public void printB(){
+        System.out.println(elements.get(0).getScore()/100);
+        System.out.println(elements.get(0).getWeight());
+
+
     }
 
     public void kill(){

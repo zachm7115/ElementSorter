@@ -23,7 +23,7 @@ public class ElementParser {
 
     private static ArrayList<String> readElements() {
         try {
-            File file = new File("./src/BackPackProblem/Elements.txt");
+            File file = new File("./src/Elements.txt");
             Scanner reader = new Scanner(file);
 
             ArrayList<String> list = new ArrayList<>();
